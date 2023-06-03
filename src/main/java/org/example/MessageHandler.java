@@ -4,7 +4,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class MessageHandler {
-    static String sendMessage (String stringContent) {
+    public static String sendMessage (String stringContent) {
         JSONObject messageJson = new JSONObject(stringContent);
         String text = messageJson.get("text").toString();
         Long time = (Long) messageJson.get("time");
@@ -17,7 +17,7 @@ public class MessageHandler {
         return "Message sent";
     }
 
-    static String getAllMessage () {
+    public static String getAllMessage () {
         JSONArray js = new JSONArray(Main.messages);
 
         return js.toString();
